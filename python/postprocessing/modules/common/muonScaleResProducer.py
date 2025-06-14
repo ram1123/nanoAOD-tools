@@ -148,13 +148,15 @@ class muonScaleResProducer(Module):
 
         return True
 
-
-muonScaleRes2016 = lambda: muonScaleResProducer('roccor.Run2.v3',
-                                                'RoccoR2016.txt', 2016, "Run2")
-muonScaleRes2017 = lambda: muonScaleResProducer('roccor.Run2.v3',
-                                                'RoccoR2017.txt', 2017, "Run2")
-muonScaleRes2018 = lambda: muonScaleResProducer('roccor.Run2.v3',
-                                                'RoccoR2018.txt', 2018, "Run2")
+# Ref: https://twiki.cern.ch/twiki/bin/view/CMS/RochcorMuon & https://muon-wiki.docs.cern.ch/guidelines/corrections/?h=roch#medium-pt-trigger-efficiencies
+muonScaleRes2016pre = lambda: muonScaleResProducer('roccor.Run2.v5',
+                                                'RoccoR2016aUL.txt', 2016, "Run2")
+muonScaleRes2016 = lambda: muonScaleResProducer('roccor.Run2.v5',
+                                                'RoccoR2016bUL.txt', 2016, "Run2")
+muonScaleRes2017 = lambda: muonScaleResProducer('roccor.Run2.v5',
+                                                'RoccoR2017UL.txt', 2017, "Run2")
+muonScaleRes2018 = lambda: muonScaleResProducer('roccor.Run2.v5',
+                                                'RoccoR2018UL.txt', 2018, "Run2")
 muonScaleRes2022 = lambda: muonScaleResProducer('roccor.2022.v2',
                                                 '2022_schemaV2.json', 2022, "Run3")
 muonScaleRes2022EE = lambda: muonScaleResProducer('roccor.2022.v2',
