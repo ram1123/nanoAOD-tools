@@ -52,7 +52,7 @@ class muonScaleResProducer(Module):
             self.out.branch("Muon_correctedUp_pt", "F", lenVar="nMuon")
             self.out.branch("Muon_correctedDown_pt", "F", lenVar="nMuon")
         if self.dataEra == "Run3":
-            self.out.branch("Muon_pt", "F", lenVar="nMuon")
+            self.out.branch("Muon_corrected_pt", "F", lenVar="nMuon")
             self.out.branch("Muon_uncorrected_pt", "F", lenVar="nMuon")
             self.out.branch("Muon_syst_pt", "F", lenVar="nMuon")
             self.out.branch("Muon_stat_pt", "F", lenVar="nMuon")
@@ -142,7 +142,7 @@ class muonScaleResProducer(Module):
 
                 pt_uncorr = list(mu.pt for mu in muons)
                 self.out.fillBranch("Muon_uncorrected_pt", pt_uncorr)
-                self.out.fillBranch("Muon_pt", pt_corr)
+                self.out.fillBranch("Muon_corrected_pt", pt_corr)
                 self.out.fillBranch("Muon_syst_pt", pt_syst)
                 self.out.fillBranch("Muon_stat_pt", pt_stat)
 
